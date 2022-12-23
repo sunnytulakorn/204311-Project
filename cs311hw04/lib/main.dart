@@ -2,10 +2,13 @@ import 'package:flutter/material.dart';
 import 'package:flutter_image_slideshow/flutter_image_slideshow.dart';
 
 void main() {
-  runApp(MyApp());
+  runApp(MaterialApp(
+    title: "My first App",
+    home: MyHome(),
+  ));
 }
 
-class MyApp extends StatelessWidget {
+class MyHome extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -43,7 +46,7 @@ class MyApp extends StatelessWidget {
               height: 220,
               initialPage: 0,
               indicatorColor: Colors.white,
-              indicatorBackgroundColor: Colors.grey,
+              indicatorBackgroundColor: Colors.grey,          
               children: [
                 Image.asset(
                   'assets/images/hotel-from-pool-area.jpg',
@@ -65,15 +68,15 @@ class MyApp extends StatelessWidget {
                   'assets/images/2.jpg',
                   fit: BoxFit.cover,
                 ),
-              ],
+                
+              ],      
               onPageChanged: (value) {
                 print('Page changed: $value');
               },
               autoPlayInterval: 3000,
               isLoop: true,
-            ),
-            
-            ),
+            ),     
+            ),  
             Container(
               child: SizedBox(height: 25),
             ),
@@ -278,19 +281,34 @@ class MyApp extends StatelessWidget {
                 padding: EdgeInsets.only(top: 30),
                 child: ClipRRect(
                   borderRadius: BorderRadius.circular(30.0),
-                  child: Image.asset("assets/images/3.jpg", fit: BoxFit.cover,),
-                ),
-                             
+                  child: Image.asset("assets/images/3.jpg", fit: BoxFit.cover,),                  
+                ),                  
               ),
+              SizedBox(height: 70,),
+              
           ],
         ),
           ),
         ),
-        floatingActionButton: FloatingActionButton.extended(
-          foregroundColor: Colors.black,
-          backgroundColor: Color.fromARGB(255, 163, 208, 239),
-          onPressed: () {}, 
-          label: Text("                        Select a room                          "),),
+        floatingActionButton: InkWell(
+        onTap: () {},
+        child: Container(
+          height: 50.0,
+            width: MediaQuery.of(context).size.width * 0.92,
+            decoration: BoxDecoration(
+                color: Color.fromARGB(255, 152, 194, 236),
+                borderRadius: BorderRadius.circular(30)),
+            child: Center(
+              child: Text(
+                'Select a room',
+                textAlign: TextAlign.center,
+                style: TextStyle(
+                    fontWeight: FontWeight.w700,
+                    fontSize: 16.0,
+                    color: Colors.black),
+              ),
+        ),
+      ))
       ),
     );
   }
