@@ -15,10 +15,10 @@ class PokemonService extends ChangeNotifier {
   }
   void PokemonCurrent(int index) async {
     currentIndex = index;
-    PokemonInfo pokemon = await fetchPokemonInfo(currentIndex);
-    String types = pokemon.types[0];
+    PokemonInfo pokemon = await fetchPokemonInfo(currentIndex); // getch pokemon data
+    String types = pokemon.types[0]; // get pokemon type
     print(types);
-    if (types == "normal"){
+    if (types == "normal"){ // condition of type pokemon for color theme
       colorType = 0xFFA8A77A;
     } else if (types == "fire") {
       colorType = 0xFFEE8130;

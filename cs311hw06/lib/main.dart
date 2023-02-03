@@ -31,14 +31,14 @@ class _MypokemonApp extends State<MyPokemonApp> {
   };
   @override
   Widget build(BuildContext context) {
-    return ChangeNotifierProvider(
+    return ChangeNotifierProvider( // for home and appbar change
         create: (_) => PokemonService(),
         child: Consumer<PokemonService>(
           builder: (_, pokemonService, __) {
             return MaterialApp(
       title: 'Pokemon Demo',
       theme: ThemeData(
-        primarySwatch: MaterialColor(pokemonService.colorType,shadeColor),
+        primarySwatch: MaterialColor(pokemonService.colorType,shadeColor), // change appbar color
       ),
       home: const MyBottomNavigation(),
       );

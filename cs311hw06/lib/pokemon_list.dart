@@ -23,10 +23,10 @@ class _PokemonListState extends State<PokemonList> {
           itemCount: pokemonService.pokemonCount,
           itemBuilder: (BuildContext context, int index) {
             return GestureDetector(
-              onTap: () {
+              onTap: () { // when click
                 setState(() {
                   select = index+1;
-                  pokemonService.PokemonCurrent(index+1);
+                  pokemonService.PokemonCurrent(index+1); 
                 });
               },
               child: select == index + 1 ? Container( // condition select pokemon or not select pokemon
