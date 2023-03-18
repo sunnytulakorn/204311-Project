@@ -4,7 +4,7 @@ import 'package:http/http.dart' as http;
 import 'package:mockito/annotations.dart';
 import 'package:mockito/mockito.dart';
 import 'package:week8/character_list.dart';
-import 'character_list_test.mocks.dart';
+import 'genshin_characters_test.mocks.dart';
 
 @GenerateMocks([http.Client])
 void main() {
